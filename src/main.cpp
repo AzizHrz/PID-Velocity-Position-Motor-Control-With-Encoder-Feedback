@@ -12,9 +12,9 @@ int target = 0;
 int realTraget = 0;
 
 // PID gains and computation for encoder
-//  float motorKp=2.0;
+
 float turnKp = 1;
-// float motorKd=0.2;
+
 float turnKd = 0.1;
 float turnKi = 0.001;
 void turnLeft();
@@ -114,20 +114,12 @@ int k=30000;
 int counter=0;
 bool test =1;
 void loop() {
-// while (k>0)
-// {
-//     k++;
-//     Serial.print(">counter:");
-//     Serial.println(k);
-// }
-//    if(test){
-//     test=0;
-//     pos_i=0; turnRight();
-//    }
-//     stop();
-   // pos_i=0; turnLeft();
-   // pos_i=0; pidvelocity(50,50);
-
+    // push your logic here
+/*
+// this is a test code to check the motor control
+// it will do a small demo to chech the motor control by doing a sequence of actions 
+// that makes the robot move on a rectangle
+// and print the counter value to the serial monitor
     stop();
     counter++;
     Serial.print(">counter:");
@@ -172,6 +164,8 @@ void loop() {
     }else if(counter==15){
         pos_i=0; pos_iR=0; turnLeft();
     }
+
+*/
 
 }    
 void pidvelocity(float vt, float vtR){
@@ -355,9 +349,7 @@ void turnLeft()
     }
         float u = pidController(realTraget, turnKp, turnKd, turnKi, encoderCount); // i change target by target - encoderCounter
 
-        // moveMotorA(u);
-        // moveMotor (In1, In2, EnA, u);
-        // move2Motor(In1, In2, In3, In4, EnA, EnB, u);
+        
         // Set the motor speed and direction
         int dirR = 1;
         if (u < 0)
@@ -402,9 +394,7 @@ void turnRight()
 
         float u = pidController(realTraget, turnKp, turnKd, turnKi, encoderCount); // i change target by target - encoderCounter
 
-        // moveMotorA(u);
-        // moveMotor (In1, In2, EnA, u);
-        // move2Motor (In1, In2, In3, In4, EnA, EnB, u);
+      
         // Set the motor speed and direction
         int dir = 1;
         if (u < 0)

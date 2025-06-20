@@ -9,3 +9,4 @@ _pycache_/
 main*.txt
 encoder.cpp
 ultrasonic.cpp
+src/last_autonome.cpp
